@@ -17,7 +17,7 @@ public class CarApi {
         this.carService = carService;
     }
 
-    @GetMapping()
+    @GetMapping
     public Iterable<Car> findAll() {
         return carService.findAll();
     }
@@ -27,10 +27,21 @@ public class CarApi {
         return carService.findById(id);
     }
 
-    @PostMapping()
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void addCar(@RequestBody Car car) {
-        carService.save(car);
+    public Car addCar(@RequestBody Car car) {
+        return carService.save(car);
+    }
+
+    @PutMapping
+    public Car update(@RequestBody Car car) {
+        return carService.save(car);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@PathVariable Long id) {
+        carService.deleteById(id);
     }
 
 }
