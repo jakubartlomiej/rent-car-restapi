@@ -40,11 +40,12 @@ public class CarService {
         }
     }
 
-    public void save(Car car) {
-        carRepository.save(car);
+    public Car save(Car car) {
+        return carRepository.save(car);
     }
 
     public void deleteById(Long id) {
         carRepository.deleteById(id);
     }
+
 }
