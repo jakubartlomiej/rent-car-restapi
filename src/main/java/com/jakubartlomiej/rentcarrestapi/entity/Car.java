@@ -1,5 +1,6 @@
 package com.jakubartlomiej.rentcarrestapi.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 @Table(name = "CARS")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Car {
 
     @Id
@@ -17,7 +19,7 @@ public class Car {
     private Long id;
     private String brand;
     private String model;
-    private LocalDate year;
+    private int year;
     private int door;
     private int seats;
     private boolean rented;
