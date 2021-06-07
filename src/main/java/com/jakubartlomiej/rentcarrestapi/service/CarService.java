@@ -27,7 +27,7 @@ public class CarService {
     }
 
     public Iterable<Car> findAll() {
-        return carRepository.findAll(Sort.by(Sort.Direction.ASC, "brand","model"));
+        return carRepository.findAll(Sort.by(Sort.Direction.ASC, "brand", "model"));
     }
 
     public List<Car> findAll(int page, int size) {
