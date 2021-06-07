@@ -7,19 +7,17 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "CARS")
+@Table(name = "CLIENTS")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Car {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String brand;
-    private String model;
-    private int year;
-    private int door;
-    private int seats;
-    private boolean rented;
+    private String name;
+    private String surname;
+    private int personalNumber;
+
 }
