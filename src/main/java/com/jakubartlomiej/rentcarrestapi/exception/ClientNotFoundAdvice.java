@@ -12,7 +12,7 @@ public class ClientNotFoundAdvice {
     @ResponseBody
     @ExceptionHandler(ClientNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String clientNotFoundHandle(CarNotFoundException ex) {
+    public String clientNotFoundHandle(ClientNotFoundException ex) {
         return ex.getMessage();
     }
 }
