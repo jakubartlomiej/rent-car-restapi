@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -31,10 +32,14 @@ public class CarService {
     }
 
     public List<Car> findAll(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<Car> pageResult = carRepository.findAll(pageable);
-        if (pageResult.hasContent()) {
-            return pageResult.getContent();
+        if (size > 0) {
+            Pageable pageable = PageRequest.of(page, size);
+            Page<Car> pageResult = carRepository.findAll(pageable);
+            if (pageResult.hasContent()) {
+                return pageResult.getContent();
+            } else {
+                return new ArrayList<>();
+            }
         } else {
             return new ArrayList<>();
         }

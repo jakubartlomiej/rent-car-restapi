@@ -32,10 +32,14 @@ public class ClientService {
     }
 
     public List<Client> findAll(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<Client> pageResult = clientRepository.findAll(pageable);
-        if (pageResult.hasContent()) {
-            return pageResult.getContent();
+        if (size > 0) {
+            Pageable pageable = PageRequest.of(page, size);
+            Page<Client> pageResult = clientRepository.findAll(pageable);
+            if (pageResult.hasContent()) {
+                return pageResult.getContent();
+            } else {
+                return new ArrayList<>();
+            }
         } else {
             return new ArrayList<>();
         }
