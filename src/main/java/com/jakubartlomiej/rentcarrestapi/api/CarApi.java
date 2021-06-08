@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/cars")
 public class CarApi {
@@ -20,6 +22,11 @@ public class CarApi {
     @GetMapping
     public Iterable<Car> findAll() {
         return carService.findAll();
+    }
+
+    @GetMapping("/paging")
+    public List<Car> findAll(@RequestParam int size, @RequestParam int page) {
+        return carService.findAll(size, page);
     }
 
     @GetMapping("/{id}")
