@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "CARS")
@@ -21,5 +22,6 @@ public class Car {
     private int year;
     private int door;
     private int seats;
+    private BigDecimal dayCost;
     private boolean rented;
 }
