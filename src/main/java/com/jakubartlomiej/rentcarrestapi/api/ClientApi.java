@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/clients")
+@RequestMapping("/clients")
 public class ClientApi {
 
     private final ClientService clientService;
@@ -30,8 +30,8 @@ public class ClientApi {
     }
 
     @GetMapping("/paging")
-    public List<Client> findAll(@RequestParam int size, @RequestParam int page) {
-        return clientService.findAll(size, page);
+    public List<Client> findAllWithPaging(@RequestParam int page, @RequestParam int size) {
+        return clientService.findAll(page, size);
     }
 
     @PostMapping
