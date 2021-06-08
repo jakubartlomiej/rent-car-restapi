@@ -31,7 +31,7 @@ public class ClientService {
         return clientRepository.findAll(Sort.by(Sort.Direction.ASC, "surname"));
     }
 
-    public List<Client> findAll(int size, int page) {
+    public List<Client> findAll(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Client> pageResult = clientRepository.findAll(pageable);
         if (pageResult.hasContent()) {
