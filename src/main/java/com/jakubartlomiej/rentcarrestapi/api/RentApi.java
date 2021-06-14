@@ -37,7 +37,7 @@ public class RentApi {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Rent addClient(@RequestBody Rent rent) {
+    public Rent add(@RequestBody Rent rent) {
         return rentService.save(rent);
     }
 
