@@ -1,4 +1,4 @@
-package com.jakubartlomiej.rentcarrestapi.exception;
+package com.jakubartlomiej.rentcarrestapi.exception.rent;
 
 public class RentNotFoundException extends RuntimeException {
     public RentNotFoundException(Long id) {

@@ -1,4 +1,4 @@
-package com.jakubartlomiej.rentcarrestapi.exception;
+package com.jakubartlomiej.rentcarrestapi.exception.client;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
