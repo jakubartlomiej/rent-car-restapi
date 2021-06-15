@@ -1,8 +1,15 @@
 package com.jakubartlomiej.rentcarrestapi.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
-public class RentClientCarDto {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class RentDto {
 
     private Long id;
     private LocalDate rentDay;
