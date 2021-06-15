@@ -1,5 +1,6 @@
 package com.jakubartlomiej.rentcarrestapi.api;
 
+import com.jakubartlomiej.rentcarrestapi.dto.RentDto;
 import com.jakubartlomiej.rentcarrestapi.entity.Client;
 import com.jakubartlomiej.rentcarrestapi.entity.Rent;
 import com.jakubartlomiej.rentcarrestapi.service.RentService;
@@ -37,13 +38,13 @@ public class RentApi {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Rent add(@RequestBody Rent rent) {
-        return rentService.save(rent);
+    public Rent add(@RequestBody RentDto rentDto) {
+        return rentService.save(rentDto);
     }
 
     @PutMapping
-    public Rent update(@RequestBody Rent rent) {
-        return rentService.save(rent);
+    public Rent update(@RequestBody RentDto rentDto) {
+        return rentService.save(rentDto);
     }
 
     @DeleteMapping("/{id}")
