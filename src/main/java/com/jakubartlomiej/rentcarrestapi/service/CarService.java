@@ -1,7 +1,7 @@
 package com.jakubartlomiej.rentcarrestapi.service;
 
 import com.jakubartlomiej.rentcarrestapi.entity.Car;
-import com.jakubartlomiej.rentcarrestapi.exception.CarNotFoundException;
+import com.jakubartlomiej.rentcarrestapi.exception.car.CarNotFoundException;
 import com.jakubartlomiej.rentcarrestapi.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,7 +11,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service

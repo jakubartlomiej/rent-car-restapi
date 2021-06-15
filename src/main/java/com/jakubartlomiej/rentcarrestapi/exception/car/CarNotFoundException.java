@@ -1,4 +1,4 @@
-package com.jakubartlomiej.rentcarrestapi.exception;
+package com.jakubartlomiej.rentcarrestapi.exception.car;
 
 public class CarNotFoundException extends RuntimeException {
     public CarNotFoundException(Long id) {
