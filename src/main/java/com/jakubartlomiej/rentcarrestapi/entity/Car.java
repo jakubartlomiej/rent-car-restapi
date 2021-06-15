@@ -23,5 +23,4 @@ public class Car {
     private int door;
     private int seats;
     private BigDecimal dayCost;
-    private boolean rented;
 }
