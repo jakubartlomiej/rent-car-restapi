@@ -1,7 +1,7 @@
 package com.jakubartlomiej.rentcarrestapi.service;
 
 import com.jakubartlomiej.rentcarrestapi.entity.Client;
-import com.jakubartlomiej.rentcarrestapi.exception.ClientNotFoundException;
+import com.jakubartlomiej.rentcarrestapi.exception.client.ClientNotFoundException;
 import com.jakubartlomiej.rentcarrestapi.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

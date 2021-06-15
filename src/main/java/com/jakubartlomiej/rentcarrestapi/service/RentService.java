@@ -1,11 +1,10 @@
 package com.jakubartlomiej.rentcarrestapi.service;
 
-import com.jakubartlomiej.rentcarrestapi.entity.Car;
-import com.jakubartlomiej.rentcarrestapi.entity.Client;
+import com.jakubartlomiej.rentcarrestapi.dto.RentDto;
 import com.jakubartlomiej.rentcarrestapi.entity.Rent;
-import com.jakubartlomiej.rentcarrestapi.exception.CarNotFoundException;
-import com.jakubartlomiej.rentcarrestapi.exception.ClientNotFoundException;
-import com.jakubartlomiej.rentcarrestapi.exception.RentNotFoundException;
+import com.jakubartlomiej.rentcarrestapi.exception.car.CarNotFoundException;
+import com.jakubartlomiej.rentcarrestapi.exception.client.ClientNotFoundException;
+import com.jakubartlomiej.rentcarrestapi.exception.rent.RentNotFoundException;
 import com.jakubartlomiej.rentcarrestapi.repository.CarRepository;
 import com.jakubartlomiej.rentcarrestapi.repository.ClientRepository;
 import com.jakubartlomiej.rentcarrestapi.repository.RentRepository;
@@ -54,8 +53,8 @@ public class RentService {
         }
     }
 
-    public Rent save(Rent rent) {
-        return rentRepository.save(rent);
+    public Rent save(RentDto rentDto) {
+        return rentRepository.save(convertDto(rentDto));
     }
 
     public void deleteById(Long id) {
@@ -66,4 +65,13 @@ public class RentService {
         return rentRepository.findByClientId(id);
     }
 
+    public Rent convertDto(RentDto rentDto) {
+        return Rent.builder()
+                .id(rentDto.getId())
+                .rentDay(rentDto.getRentDay())
+                .rentEnd(rentDto.getRentEnd())
+                .car(carRepository.findById(rentDto.getCarId()).orElseThrow(() -> new CarNotFoundException(rentDto.getCarId())))
+                .client(clientRepository.findById(rentDto.getClientId()).orElseThrow(() -> new ClientNotFoundException(rentDto.getClientId())))
+                .build();
+    }
 }
