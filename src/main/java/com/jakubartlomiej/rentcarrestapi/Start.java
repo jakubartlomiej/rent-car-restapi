@@ -30,10 +30,10 @@ public class Start {
 
     @EventListener(ApplicationReadyEvent.class)
     public void runExample() {
-        Car car1 = new Car(1L, "Audi", "A6", 2014, 4, 5, BigDecimal.valueOf(159.99), false);
-        Car car2 = new Car(2L, "Audi", "A8", 2018, 4, 5, BigDecimal.valueOf(209.00), false);
-        Car car3 = new Car(3L, "BMW", "1", 2011, 2, 5, BigDecimal.valueOf(120.00), false);
-        Car car4 = new Car(4L, "BMW", "7", 2015, 4, 5, BigDecimal.valueOf(179.59), false);
+        Car car1 = new Car(1L, "Audi", "A6", 2014, 4, 5, BigDecimal.valueOf(159.99));
+        Car car2 = new Car(2L, "Audi", "A8", 2018, 4, 5, BigDecimal.valueOf(209.00));
+        Car car3 = new Car(3L, "BMW", "1", 2011, 2, 5, BigDecimal.valueOf(120.00));
+        Car car4 = new Car(4L, "BMW", "7", 2015, 4, 5, BigDecimal.valueOf(179.59));
 
         Client client1 = new Client(1L, "Jan", "Kowalski", 123456789);
         Client client2 = new Client(2L, "Piotr", "Nogalski", 111122224);
