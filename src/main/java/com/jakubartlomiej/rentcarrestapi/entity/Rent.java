@@ -19,7 +19,6 @@ public class Rent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
     private Long id;
     private LocalDate rentDay;
     private LocalDate rentEnd;
